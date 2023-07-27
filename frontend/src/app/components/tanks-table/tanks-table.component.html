@@ -1,0 +1,26 @@
+<dx-data-grid
+  [customizeColumns]="customizeColumns"
+  [dataSource]="dataSource"
+  [showBorders]="true"
+  [showRowLines]="false"
+  [showColumnLines]="false"
+>
+<dxi-column dataField="Citerne" [groupIndex]="0"></dxi-column>
+<dxi-column dataField="Date"></dxi-column>
+<dxi-column dataField="initialVolume" caption="Volume initial (m&#179;)"></dxi-column>
+<dxi-column dataField="addedQuantity" caption="Quantité ajoutée (m&#179;)"></dxi-column>
+<dxi-column dataField="Siphonage" caption="Siphonage (m&#179;)"></dxi-column>
+<dxi-column dataField="finalVolume" caption="Volume final (m&#179;)"></dxi-column>
+<dxi-column dataField="Véhicule"></dxi-column>
+  <dxo-scrolling rowRenderingMode="virtual"> </dxo-scrolling>
+  <dxo-paging [pageSize]="10"> </dxo-paging>
+  <dxo-export [enabled]="true" [allowExportSelectedData]="true"></dxo-export>
+  <dxo-grouping #expand [autoExpandAll]="false"></dxo-grouping>
+  <dxo-pager
+    [visible]="true"
+    [allowedPageSizes]="allowedPageSizes"
+    [displayMode]="displayMode"
+    [showNavigationButtons]="showNavButtons"
+  >
+  </dxo-pager>
+</dx-data-grid>

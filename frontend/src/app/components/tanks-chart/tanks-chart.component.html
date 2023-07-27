@@ -1,0 +1,33 @@
+<dx-chart
+    palette="violet"
+    [dataSource]="architecturesInfo"
+    title="Suivi de la contenance de toutes les citernes"
+  >
+    <dxi-series valueField="Citerne1" name="Citerne 1" color="#00A9BF"></dxi-series>
+    <dxi-series valueField="Citerne2" name="Citerne 2" color="#7B9D52"></dxi-series>
+    <dxi-series valueField="Citerne3" name="Citerne 3" color="#B40D32"></dxi-series>
+    <dxi-series valueField="Citerne4" name="Citerne 4" color="#845EC2"></dxi-series>
+    <dxo-common-series-settings
+      #seriesSettings
+      argumentField="date"
+      [type]="types[0]"
+      [point]="{ visible: false }"
+    >
+    </dxo-common-series-settings>
+    <dxi-value-axis position="left" [visualRange]="{ endValue: 10 }">
+      <dxo-title text="Quantité (L)"></dxo-title>
+    </dxi-value-axis>
+    <dxo-margin [bottom]="20"></dxo-margin>
+    <dxo-common-axis-settings>
+      <dxo-grid [visible]="true"></dxo-grid>
+    </dxo-common-axis-settings>
+    <dxo-legend verticalAlignment="bottom" horizontalAlignment="center">
+    </dxo-legend>
+    <dxo-argument-axis [allowDecimals]="false" [axisDivisionFactor]="60">
+      <dxo-label>
+        <dxo-format type="decimal"></dxo-format>
+      </dxo-label>
+    </dxo-argument-axis>
+    <dxo-export [enabled]="true"></dxo-export>
+    <dxo-tooltip [enabled]="true"></dxo-tooltip>
+  </dx-chart>

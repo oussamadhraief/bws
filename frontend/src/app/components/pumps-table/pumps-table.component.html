@@ -1,0 +1,23 @@
+<dx-data-grid
+  [customizeColumns]="customizeColumns"
+  [dataSource]="dataSource"
+  [showBorders]="true"
+  [showRowLines]="false"
+  [showColumnLines]="false"
+>
+  <dxi-column dataField="Pompe" [groupIndex]="0"></dxi-column>
+  <dxi-column dataField="Date"></dxi-column>
+  <dxi-column dataField="Quantité (L)"></dxi-column>
+  <dxi-column dataField="Véhicule"></dxi-column>
+  <dxo-scrolling rowRenderingMode="virtual"> </dxo-scrolling>
+  <dxo-paging [pageSize]="10"> </dxo-paging>
+  <dxo-export [enabled]="true" [allowExportSelectedData]="true"></dxo-export>
+  <dxo-grouping #expand [autoExpandAll]="false"></dxo-grouping>
+  <dxo-pager
+    [visible]="true"
+    [allowedPageSizes]="allowedPageSizes"
+    [displayMode]="displayMode"
+    [showNavigationButtons]="showNavButtons"
+  >
+  </dxo-pager>
+</dx-data-grid>

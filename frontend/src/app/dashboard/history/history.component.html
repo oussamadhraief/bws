@@ -1,0 +1,83 @@
+<main class="w-full h-full p-5 pb-20 overflow-y-auto">
+  <div>
+    <button
+      (click)="handleTabChange(true)"
+      class="px-4 py-2 text-xl font-[500] text-lightgray"
+      [ngClass]="
+        tankTabVisible
+          ? 'bg-white shadow-bottomless border-b-2 border-primary rounded-t-lg'
+          : 'bg-transparent'
+      "
+    >
+      Historique des citernes
+    </button>
+    <button
+      (click)="handleTabChange(false)"
+      class="px-4 py-2 text-xl font-[500] text-lightgray"
+      [ngClass]="
+        !tankTabVisible
+          ? 'bg-white shadow-bottomless border-b-2 border-primary rounded-t-lg'
+          : 'bg-transparent'
+      "
+    >
+      Historique des pompes
+    </button>
+  </div>
+  <section
+    class="w-full h-fit bg-white shadow-copy p-5"
+    [ngClass]="tankTabVisible ? 'rounded-b-lg rounded-tr-lg' : 'rounded-lg'"
+  >
+    <div *ngIf="tankTabVisible">
+      <div class="w-full grid grid-cols-5 gap-10 pb-3 mb-3 border-b-2 border-primary/70">
+        <div class="col-span-3 flex items-center gap-3">
+          <label for="tanksSelect" class="font-[500]">Citerne</label>
+          <div class="relative flex-1">
+            <select class="w-full border-b border-[#ddd] appearance-none outline-none cursor-pointer py-[7px]">
+              <option>Toutes</option>
+              <!-- Add more options here if needed -->
+            </select>
+            <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+              <img src="../../../assets/SVG/icon-21.svg" alt="" class="w-2" />
+            </div>
+          </div>
+        </div>
+        <div class="col-span-1 flex items-center gap-3">
+          <label for="startDate" class="font-[500]">Du</label>
+          <app-date-picker></app-date-picker>
+        </div>
+        <div class="col-span-1 flex items-center gap-3">
+          <label for="endDate" class="font-[500]">Au</label>
+          <app-date-picker></app-date-picker>
+        </div>
+      </div>
+      <app-tanks-chart></app-tanks-chart>
+      <app-tanks-table></app-tanks-table>
+    </div>
+    <div *ngIf="!tankTabVisible">
+      <div class="w-full grid grid-cols-5 gap-10 pb-3 mb-3 border-b-2 border-primary/70">
+        <div class="col-span-3 flex items-center gap-3">
+          <label for="tanksSelect" class="font-[500]">Pompe</label>
+          <div class="relative flex-1">
+            <select class="w-full border-b border-[#ddd] appearance-none outline-none cursor-pointer py-[7px]">
+              <option>Toutes</option>
+              <!-- Add more options here if needed -->
+            </select>
+            <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+              <img src="../../../assets/SVG/icon-21.svg" alt="" class="w-2" />
+            </div>
+          </div>
+        </div>
+        <div class="col-span-1 flex items-center gap-3">
+          <label for="startDate" class="font-[500]">Du</label>
+          <app-date-picker></app-date-picker>
+        </div>
+        <div class="col-span-1 flex items-center gap-3">
+          <label for="endDate" class="font-[500]">Au</label>
+          <app-date-picker></app-date-picker>
+        </div>
+      </div>
+      <app-pumps-chart></app-pumps-chart>
+      <app-pumps-table></app-pumps-table>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,29 @@
+<dx-chart id="chart" title="Suivi de la distribution de toutes les pompes" [dataSource]="populationData">
+    <dxi-series valueField="pompe1" name="Pompe 1" color="#84C64F"></dxi-series>
+    <dxi-series valueField="pompe2" name="Pompe 2" color="#E0E0E1"></dxi-series>
+    <dxi-series valueField="pompe3" name="Pompe 3" color="#FDC446"></dxi-series>
+    <dxi-series valueField="pompe4" name="Pompe 4" color="#32BEB7"></dxi-series>
+    <dxi-series valueField="pompe5" name="Pompe 5" color="#AFB6BE"></dxi-series>
+    <dxi-series valueField="pompe6" name="Pompe 6" color="#C87BB3"></dxi-series>
+    <dxi-value-axis position="left" [visualRange]="{ endValue: 1000 }">
+      <dxo-title text="Quantité (L)"></dxo-title>
+    </dxi-value-axis>
+    <dxo-argument-axis
+        title="Temps">
+    </dxo-argument-axis>
+    <dxo-common-series-settings argumentField="date" type="stackedBar">
+    </dxo-common-series-settings>
+    <dxo-legend
+      verticalAlignment="bottom"
+      horizontalAlignment="center"
+      itemTextPosition="top"
+    >
+    </dxo-legend>
+    <dxo-export [enabled]="true"></dxo-export>
+    <dxo-tooltip
+      [enabled]="true"
+      location="edge"
+      [customizeTooltip]="customizeTooltip"
+    >
+    </dxo-tooltip>
+  </dx-chart>

@@ -1,0 +1,514 @@
+<main class="w-full h-full bg-tertiary p-5 pb-20 overflow-y-auto">
+
+  <section>
+    <mat-card class="shadow-copy">
+      <div class="relative w-full flex items-center py-3 px-5">
+        <p class="text-2xl font-semibold text-lightgray">États des citernes</p>
+        <div class="flex items-center flex-row ml-10 gap-5">
+          <div class="relative">
+            <select class="text-[#727375] flex items-center gap-2 pl-[30px] pr-6 py-1 rounded-full border border-[#727375] bg-gray-100 text-xs appearance-none outline-none cursor-pointer">
+              <option>Toutes les citernes</option>
+              <!-- Add more options here if needed -->
+            </select>
+            <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+              <img src="../../../assets/SVG/icon-21.svg" alt="" class="w-2" />
+            </div>
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+              <img
+              src="../../../assets/SVG/icon-16.svg"
+              alt=""
+              class="w-3"
+            />
+            </div>
+          </div>
+          
+          <div class="relative">
+            <select class="text-[#727375] flex items-center gap-2 pl-[30px] pr-6 py-1 rounded-full border border-[#727375] bg-gray-100 text-xs appearance-none outline-none cursor-pointer">
+              <option>Capacité</option>
+              <!-- Add more options here if needed -->
+            </select>
+            <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+              <img src="../../../assets/SVG/icon-21.svg" alt="" class="w-2" />
+            </div>
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+              <img
+              src="../../../assets/SVG/icon-16.svg"
+              alt=""
+              class="w-3"
+            />
+            </div>
+          </div>
+          <div class="relative">
+            <select class="text-[#727375] flex items-center gap-2 pl-[30px] pr-6 py-1 rounded-full border border-[#727375] bg-gray-100 text-xs appearance-none outline-none cursor-pointer">
+              <option>Nature</option>
+              <!-- Add more options here if needed -->
+            </select>
+            <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+              <img src="../../../assets/SVG/icon-21.svg" alt="" class="w-2" />
+            </div>
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+              <img
+              src="../../../assets/SVG/icon-18.svg"
+              alt=""
+              class="w-3"
+            />
+            </div>
+          </div>
+          <div class="relative">
+            <select class="text-[#727375] flex items-center gap-2 pl-[30px] pr-6 py-1 rounded-full border border-[#727375] bg-gray-100 text-xs appearance-none outline-none cursor-pointer">
+              <option>Date</option>
+              <!-- Add more options here if needed -->
+            </select>
+            <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+              <img src="../../../assets/SVG/icon-21.svg" alt="" class="w-2" />
+            </div>
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+              <img
+              src="../../../assets/SVG/icon-19.svg"
+              alt=""
+              class="w-3"
+            />
+            </div>
+          </div>
+          <div class="relative">
+            <select class="text-[#727375] flex items-center gap-2 pl-[30px] pr-6 py-1 rounded-full border border-[#727375] bg-gray-100 text-xs appearance-none outline-none cursor-pointer">
+              <option>Site</option>
+              <!-- Add more options here if needed -->
+            </select>
+            <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+              <img src="../../../assets/SVG/icon-21.svg" alt="" class="w-2" />
+            </div>
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+              <img
+              src="../../../assets/SVG/icon-20.svg"
+              alt=""
+              class="w-3"
+            />
+            </div>
+          </div>
+        </div>
+        <div class="w-9 absolute right-5 top-1/2 -translate-y-1/2 cursor-pointer z-10">
+            <img src="../../../assets/SVG/icon-22.svg" alt="" class="w-full" (click)="handleTankButtons()" />
+            <button class="w-8 ml-0.5 absolute top-12 shadow-buttons rounded-full bg-[#CFCFCF]" (click)="openAddNewTankModal()"><img src="../../../assets/SVG/icon-23.svg" alt="" class="w-full" *ngIf="isTankButtonsVisible" /></button>
+            <button class="w-8 ml-0.5 absolute top-24 shadow-buttons rounded-full bg-[#CFCFCF]"><img src="../../../assets/SVG/icon-24.svg" alt="" class="w-full" *ngIf="isTankButtonsVisible" /></button>
+            <button class="w-8 ml-0.5 absolute top-36 shadow-buttons rounded-full bg-[#CFCFCF]"><img src="../../../assets/SVG/icon-25.svg" alt="" class="w-full" *ngIf="isTankButtonsVisible" /></button>
+            
+        </div>
+      </div>
+    </mat-card>
+    <div class="w-full grid grid-cols-4 mt-6 gap-10">
+      <mat-card class="col-span-1 px-5 py-6 shadow-copy">
+        <div class="flex justify-between items-center w-full">
+          <p class="text-xl font-[500] text-lightblack">Citerne 1</p>
+          <p class="text-lightgray">
+            il y a <span class="text-[#009245]">3 min</span>
+          </p>
+        </div>
+        <div class="mt-5 flex items-start gap-3 flex-nowrap">
+          <div class="w-[40%]">
+            <img src="../../../assets/SVG/icon-29.svg" alt="" class="w-full" />
+          </div>
+          <div class="w-[60%] flex flex-col">
+            <div class="flex items-center gap-2">
+              <img src="../../../assets/SVG/icon-11.svg" alt="" class="w-4" />
+              <p class="font-[500]">Gasoil 50</p>
+            </div>
+            <p class="font-semibold pt-5">Dernier ravitaillement</p>
+            <div class="mt-2 flex items-center gap-2 font-[500]">
+              <img src="../../../assets/SVG/icon-12.svg" alt="" class="w-4" />
+              <p class="whitespace-nowrap">08/06/2023 - 08:58</p>
+            </div>
+            <div class="flex items-center gap-2 mt-2">
+              <img src="../../../assets/SVG/icon-13.svg" alt="" class="w-4" />
+              <p class="font-[600]">7,5m&#179;</p>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+      <mat-card class="col-span-1 px-5 py-6 shadow-copy">
+        <div class="flex justify-between items-center w-full">
+          <p class="text-xl font-[500] text-lightblack">Citerne 2</p>
+          <p class="text-lightgray">
+            il y a <span class="text-[#009245]">2 min</span>
+          </p>
+        </div>
+        <div class="mt-5 flex items-start gap-3 flex-nowrap">
+          <div class="w-[40%]">
+            <img src="../../../assets/SVG/icon-30.svg" alt="" class="w-full" />
+          </div>
+          <div class="w-[60%] flex flex-col">
+            <div class="flex items-center gap-2">
+              <img src="../../../assets/SVG/icon-11.svg" alt="" class="w-4" />
+              <p class="font-[500]">Super sans-plomb</p>
+            </div>
+            <p class="font-semibold pt-5">Dernier ravitaillement</p>
+            <div class="mt-2 flex items-center gap-2 font-[500]">
+              <img src="../../../assets/SVG/icon-12.svg" alt="" class="w-4" />
+              <p class="whitespace-nowrap">08/06/2023 - 09:35</p>
+            </div>
+            <div class="flex items-center gap-2 mt-2">
+              <img src="../../../assets/SVG/icon-13.svg" alt="" class="w-4" />
+              <p class="font-[600]">6,89m&#179;</p>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+      <mat-card class="col-span-1 px-5 py-6 shadow-copy">
+        <div class="flex justify-between items-center w-full">
+          <p class="text-xl font-[500] text-lightblack">Citerne 3</p>
+          <p class="text-lightgray">
+            il y a <span class="text-[#009245]">3 min</span>
+          </p>
+        </div>
+        <div class="mt-5 flex items-start gap-3 flex-nowrap">
+          <div class="w-[40%]">
+            <img src="../../../assets/SVG/icon-31.svg" alt="" class="w-full" />
+          </div>
+          <div class="w-[60%] flex flex-col">
+            <div class="flex items-center gap-2">
+              <img src="../../../assets/SVG/icon-11.svg" alt="" class="w-4" />
+              <p class="font-[500]">Super sans-plomb</p>
+            </div>
+            <p class="font-semibold pt-5">Dernier ravitaillement</p>
+            <div class="mt-2 flex items-center gap-2 font-[500]">
+              <img src="../../../assets/SVG/icon-12.svg" alt="" class="w-4" />
+              <p class="whitespace-nowrap">08/06/2023 - 10:44</p>
+            </div>
+            <div class="flex items-center gap-2 mt-2">
+              <img src="../../../assets/SVG/icon-13.svg" alt="" class="w-4" />
+              <p class="font-[600]">7,5m&#179;</p>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+      <mat-card class="col-span-1 px-5 py-6 shadow-copy">
+        <div class="flex justify-between items-center w-full">
+          <p class="text-xl font-[500] text-lightblack">Citerne 4</p>
+          <p class="text-lightgray">
+            il y a <span class="text-[#009245]">4 min</span>
+          </p>
+        </div>
+        <div class="mt-5 flex items-start gap-3 flex-nowrap">
+          <div class="w-[40%]">
+            <img src="../../../assets/SVG/icon-32.svg" alt="" class="w-full" />
+          </div>
+          <div class="w-[60%] flex flex-col">
+            <div class="flex items-center gap-2">
+              <img src="../../../assets/SVG/icon-11.svg" alt="" class="w-4" />
+              <p class="font-[500]">Gasoil ordinaire</p>
+            </div>
+            <p class="font-semibold pt-5">Dernier ravitaillement</p>
+            <div class="mt-2 flex items-center gap-2 font-[500]">
+              <img src="../../../assets/SVG/icon-12.svg" alt="" class="w-4" />
+              <p class="whitespace-nowrap">08/06/2023 - 08:58</p>
+            </div>
+            <div class="flex items-center gap-2 mt-2">
+              <img src="../../../assets/SVG/icon-13.svg" alt="" class="w-4" />
+              <p class="font-[600]">100m&#179;</p>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </section>
+
+
+  <section class="mt-10">
+    <mat-card class="shadow-copy">
+      <div class="relative w-full flex items-center py-3 px-5">
+        <p class="text-2xl font-semibold text-lightgray">États des pompes</p>
+        <div class="flex items-center flex-row ml-10 gap-5">
+          <div class="relative">
+            <select class="text-[#727375] flex items-center gap-2 pl-[30px] pr-6 py-1 rounded-full border border-[#727375] bg-gray-100 text-xs appearance-none outline-none cursor-pointer">
+              <option>Toutes les pompes</option>
+              <!-- Add more options here if needed -->
+            </select>
+            <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+              <img src="../../../assets/SVG/icon-21.svg" alt="" class="w-2" />
+            </div>
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+              <img
+              src="../../../assets/SVG/icon-15.svg"
+              alt=""
+              class="w-3"
+            />
+            </div>
+          </div>
+          <div class="relative">
+            <select class="text-[#727375] flex items-center gap-2 pl-[30px] pr-6 py-1 rounded-full border border-[#727375] bg-gray-100 text-xs appearance-none outline-none cursor-pointer">
+              <option>Toutes les citernes</option>
+              <!-- Add more options here if needed -->
+            </select>
+            <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+              <img src="../../../assets/SVG/icon-21.svg" alt="" class="w-2" />
+            </div>
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+              <img
+              src="../../../assets/SVG/icon-16.svg"
+              alt=""
+              class="w-3"
+            />
+            </div>
+          </div>
+          <div class="relative">
+            <select class="text-[#727375] flex items-center gap-2 pl-[30px] pr-6 py-1 rounded-full border border-[#727375] bg-gray-100 text-xs appearance-none outline-none cursor-pointer">
+              <option>Nature</option>
+              <!-- Add more options here if needed -->
+            </select>
+            <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+              <img src="../../../assets/SVG/icon-21.svg" alt="" class="w-2" />
+            </div>
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+              <img
+              src="../../../assets/SVG/icon-18.svg"
+              alt=""
+              class="w-3"
+            />
+            </div>
+          </div>
+          <div class="relative">
+            <select class="text-[#727375] flex items-center gap-2 pl-[30px] pr-6 py-1 rounded-full border border-[#727375] bg-gray-100 text-xs appearance-none outline-none cursor-pointer">
+              <option>Date</option>
+              <!-- Add more options here if needed -->
+            </select>
+            <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+              <img src="../../../assets/SVG/icon-21.svg" alt="" class="w-2" />
+            </div>
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+              <img
+              src="../../../assets/SVG/icon-19.svg"
+              alt=""
+              class="w-3"
+            />
+            </div>
+          </div>
+          <div class="relative">
+            <select class="text-[#727375] flex items-center gap-2 pl-[30px] pr-6 py-1 rounded-full border border-[#727375] bg-gray-100 text-xs appearance-none outline-none cursor-pointer">
+              <option>Site</option>
+              <!-- Add more options here if needed -->
+            </select>
+            <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+              <img src="../../../assets/SVG/icon-21.svg" alt="" class="w-2" />
+            </div>
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+              <img
+              src="../../../assets/SVG/icon-20.svg"
+              alt=""
+              class="w-3"
+            />
+            </div>
+          </div>
+        </div>
+        <div class="w-9 absolute right-5 top-1/2 -translate-y-1/2 cursor-pointer z-10">
+            <img src="../../../assets/SVG/icon-09.svg" alt="" class="w-full" (click)="handlePumpButtons()" />
+            <button class="w-8 ml-0.5 absolute top-12 shadow-buttons rounded-full bg-[#CFCFCF]" (click)="openAddNewPumpModal()"><img src="../../../assets/SVG/icon-23.svg" alt="" class="w-full" *ngIf="isPumpButtonsVisible" /></button>
+            <button class="w-8 ml-0.5 absolute top-24 shadow-buttons rounded-full bg-[#CFCFCF]"><img src="../../../assets/SVG/icon-24.svg" alt="" class="w-full" *ngIf="isPumpButtonsVisible" /></button>
+            <button class="w-8 ml-0.5 absolute top-36 shadow-buttons rounded-full bg-[#CFCFCF]"><img src="../../../assets/SVG/icon-25.svg" alt="" class="w-full" *ngIf="isPumpButtonsVisible" /></button>
+            
+        </div>
+      </div>
+    </mat-card>
+    <div class="w-full grid grid-cols-4 mt-6 gap-10">
+
+      <mat-card class="col-span-1 px-5 py-6 shadow-copy">
+        <div class="flex justify-between items-center w-full">
+          <p class="text-xl font-[500] text-lightblack">Pompe 1 [Citerne 1]</p>
+          <p class="text-lightgray">
+            il y a <span class="text-[#009245]">3 min</span>
+          </p>
+        </div>
+        <div class="mt-5 flex items-start gap-3 flex-nowrap">
+          <div class="w-[40%]">
+            <img src="../../../assets/SVG/icon-33.svg" alt="" class="w-full" />
+          </div>
+          <div class="w-[60%] flex flex-col">
+            <div class="flex items-center gap-2">
+              <img src="../../../assets/SVG/icon-11.svg" alt="" class="w-4" />
+              <p class="font-[500]">Gasoil 50</p>
+            </div>
+            <p class="font-semibold pt-5">Dernier ravitaillement</p>
+            <div class="mt-2 flex items-center gap-2 font-[500]">
+              <img src="../../../assets/SVG/icon-12.svg" alt="" class="w-4" />
+              <p class="whitespace-nowrap">08/06/2023 - 11:35</p>
+            </div>
+            <div class="flex items-center gap-2 mt-2">
+              <img src="../../../assets/SVG/icon-14.svg" alt="" class="w-4" />
+              <p class="font-[600]">200L</p>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+      <mat-card class="col-span-1 px-5 py-6 shadow-copy">
+        <div class="flex justify-between items-center w-full">
+          <p class="text-xl font-[500] text-lightblack">Pompe 2 [Citerne 1]</p>
+          <p class="text-lightgray">
+            il y a <span class="text-[#009245]">3 min</span>
+          </p>
+        </div>
+        <div class="mt-5 flex items-start gap-3 flex-nowrap">
+          <div class="w-[40%]">
+            <img src="../../../assets/SVG/icon-33.svg" alt="" class="w-full" />
+          </div>
+          <div class="w-[60%] flex flex-col">
+            <div class="flex items-center gap-2">
+              <img src="../../../assets/SVG/icon-11.svg" alt="" class="w-4" />
+              <p class="font-[500]">Gasoil 50</p>
+            </div>
+            <p class="font-semibold pt-5">Dernier ravitaillement</p>
+            <div class="mt-2 flex items-center gap-2 font-[500]">
+              <img src="../../../assets/SVG/icon-12.svg" alt="" class="w-4" />
+              <p class="whitespace-nowrap">08/06/2023 - 11:35</p>
+            </div>
+            <div class="flex items-center gap-2 mt-2">
+              <img src="../../../assets/SVG/icon-14.svg" alt="" class="w-4" />
+              <p class="font-[600]">200L</p>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+      <mat-card class="col-span-1 px-5 py-6 shadow-copy">
+        <div class="flex justify-between items-center w-full">
+          <p class="text-xl font-[500] text-lightblack">Pompe 3 [Citerne 1]</p>
+          <p class="text-lightgray">
+            il y a <span class="text-[#009245]">3 min</span>
+          </p>
+        </div>
+        <div class="mt-5 flex items-start gap-3 flex-nowrap">
+          <div class="w-[40%]">
+            <img src="../../../assets/SVG/icon-33.svg" alt="" class="w-full" />
+          </div>
+          <div class="w-[60%] flex flex-col">
+            <div class="flex items-center gap-2">
+              <img src="../../../assets/SVG/icon-11.svg" alt="" class="w-4" />
+              <p class="font-[500]">Gasoil 50</p>
+            </div>
+            <p class="font-semibold pt-5">Dernier ravitaillement</p>
+            <div class="mt-2 flex items-center gap-2 font-[500]">
+              <img src="../../../assets/SVG/icon-12.svg" alt="" class="w-4" />
+              <p class="whitespace-nowrap">08/06/2023 - 11:35</p>
+            </div>
+            <div class="flex items-center gap-2 mt-2">
+              <img src="../../../assets/SVG/icon-14.svg" alt="" class="w-4" />
+              <p class="font-[600]">200L</p>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+      <mat-card class="col-span-1 px-5 py-6 shadow-copy">
+        <div class="flex justify-between items-center w-full">
+          <p class="text-xl font-[500] text-lightblack">Pompe 4 [Citerne 2]</p>
+          <p class="text-lightgray">
+            il y a <span class="text-[#009245]">3 min</span>
+          </p>
+        </div>
+        <div class="mt-5 flex items-start gap-3 flex-nowrap">
+          <div class="w-[40%]">
+            <img src="../../../assets/SVG/icon-33.svg" alt="" class="w-full" />
+          </div>
+          <div class="w-[60%] flex flex-col">
+            <div class="flex items-center gap-2">
+              <img src="../../../assets/SVG/icon-11.svg" alt="" class="w-4" />
+              <p class="font-[500]">Gasoil 50</p>
+            </div>
+            <p class="font-semibold pt-5">Dernier ravitaillement</p>
+            <div class="mt-2 flex items-center gap-2 font-[500]">
+              <img src="../../../assets/SVG/icon-12.svg" alt="" class="w-4" />
+              <p class="whitespace-nowrap">08/06/2023 - 11:35</p>
+            </div>
+            <div class="flex items-center gap-2 mt-2">
+              <img src="../../../assets/SVG/icon-14.svg" alt="" class="w-4" />
+              <p class="font-[600]">200L</p>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+      <mat-card class="col-span-1 px-5 py-6 shadow-copy">
+        <div class="flex justify-between items-center w-full">
+          <p class="text-xl font-[500] text-lightblack">Pompe 5 [Citerne 2]</p>
+          <p class="text-lightgray">
+            il y a <span class="text-[#009245]">3 min</span>
+          </p>
+        </div>
+        <div class="mt-5 flex items-start gap-3 flex-nowrap">
+          <div class="w-[40%]">
+            <img src="../../../assets/SVG/icon-33.svg" alt="" class="w-full" />
+          </div>
+          <div class="w-[60%] flex flex-col">
+            <div class="flex items-center gap-2">
+              <img src="../../../assets/SVG/icon-11.svg" alt="" class="w-4" />
+              <p class="font-[500]">Gasoil 50</p>
+            </div>
+            <p class="font-semibold pt-5">Dernier ravitaillement</p>
+            <div class="mt-2 flex items-center gap-2 font-[500]">
+              <img src="../../../assets/SVG/icon-12.svg" alt="" class="w-4" />
+              <p class="whitespace-nowrap">08/06/2023 - 11:35</p>
+            </div>
+            <div class="flex items-center gap-2 mt-2">
+              <img src="../../../assets/SVG/icon-14.svg" alt="" class="w-4" />
+              <p class="font-[600]">200L</p>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+      <mat-card class="col-span-1 px-5 py-6 shadow-copy">
+        <div class="flex justify-between items-center w-full">
+          <p class="text-xl font-[500] text-lightblack">Pompe 6 [Citerne 3]</p>
+          <p class="text-lightgray">
+            il y a <span class="text-[#009245]">3 min</span>
+          </p>
+        </div>
+        <div class="mt-5 flex items-start gap-3 flex-nowrap">
+          <div class="w-[40%]">
+            <img src="../../../assets/SVG/icon-33.svg" alt="" class="w-full" />
+          </div>
+          <div class="w-[60%] flex flex-col">
+            <div class="flex items-center gap-2">
+              <img src="../../../assets/SVG/icon-11.svg" alt="" class="w-4" />
+              <p class="font-[500]">Gasoil 50</p>
+            </div>
+            <p class="font-semibold pt-5">Dernier ravitaillement</p>
+            <div class="mt-2 flex items-center gap-2 font-[500]">
+              <img src="../../../assets/SVG/icon-12.svg" alt="" class="w-4" />
+              <p class="whitespace-nowrap">08/06/2023 - 11:35</p>
+            </div>
+            <div class="flex items-center gap-2 mt-2">
+              <img src="../../../assets/SVG/icon-14.svg" alt="" class="w-4" />
+              <p class="font-[600]">200L</p>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+      <mat-card class="col-span-1 px-5 py-6 shadow-copy">
+        <div class="flex justify-between items-center w-full">
+          <p class="text-xl font-[500] text-lightblack">Pompe 7 [Citerne 4]</p>
+          <p class="text-lightgray">
+            il y a <span class="text-[#009245]">3 min</span>
+          </p>
+        </div>
+        <div class="mt-5 flex items-start gap-3 flex-nowrap">
+          <div class="w-[40%]">
+            <img src="../../../assets/SVG/icon-33.svg" alt="" class="w-full" />
+          </div>
+          <div class="w-[60%] flex flex-col">
+            <div class="flex items-center gap-2">
+              <img src="../../../assets/SVG/icon-11.svg" alt="" class="w-4" />
+              <p class="font-[500]">Gasoil 50</p>
+            </div>
+            <p class="font-semibold pt-5">Dernier ravitaillement</p>
+            <div class="mt-2 flex items-center gap-2 font-[500]">
+              <img src="../../../assets/SVG/icon-12.svg" alt="" class="w-4" />
+              <p class="whitespace-nowrap">08/06/2023 - 11:35</p>
+            </div>
+            <div class="flex items-center gap-2 mt-2">
+              <img src="../../../assets/SVG/icon-14.svg" alt="" class="w-4" />
+              <p class="font-[600]">200L</p>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+      
+    </div>
+  </section>
+
+
+</main>

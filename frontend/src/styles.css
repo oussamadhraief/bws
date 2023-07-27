@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+p {
+  margin-bottom: 0px !important;
+}
+
+
+.shadow-copy {
+  box-shadow: 0px 0px 8px rgba(187, 187, 201, 0.7) !important;
+}
+
+.shadow-bottomless {
+  box-shadow: 0px -2px 6px rgba(187, 187, 201, 0.7) !important;
+}
+
+.shadow-buttons {
+  box-shadow: 0px 0px 10px rgba(159, 168, 238, 0.7) !important;
+}
+
+.custom-pager .dx-page {
+  padding: 5px 10px; /* Adjust the padding as needed */
+  background-color: #f0f0f0; /* Change the background color */
+  border: 1px solid #ccc; /* Add a border */
+  margin: 2px; /* Adjust the margin between buttons */
+  color: #333; /* Change the text color */
+  cursor: pointer;
+}
+
+.custom-pager .dx-page.dx-page-active {
+  background-color: #007bff; /* Change the background color of the active button */
+  color: #fff; /* Change the text color of the active button */
+}
+
+/* styles.css (or any other global or component-specific CSS file) */
+.custom-border-removal {
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-radius: 0 !important;
+}
