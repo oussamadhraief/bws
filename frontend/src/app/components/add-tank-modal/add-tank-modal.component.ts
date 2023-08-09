@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
 })
 export class AddTankModalComponent {
 
+  formData = { id: '', capacity: '', nature: '', site: ''}
+
+  onSubmit() {
+    console.log(this.formData);
+  }
+  
 }

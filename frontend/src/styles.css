@@ -51,3 +51,9 @@ p {
   border-right: none !important;
   border-radius: 0 !important;
 }
+
+.custom-select option {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  height: 20px !important;
+}

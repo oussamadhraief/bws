@@ -6,4 +6,9 @@ import { Component } from '@angular/core';
 })
 export class AddPumpModalComponent {
 
+  formData = { id: '', capacity: '', nature: '', site: ''}
+
+  onSubmit() {
+    console.log(this.formData);
+  }
 }
